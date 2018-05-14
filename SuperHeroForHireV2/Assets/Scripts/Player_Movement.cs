@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class Player_Movement : MonoBehaviour {
 
     public int playerSpeed = 10;
     public bool facingRight = true;
@@ -23,6 +23,10 @@ public class NewBehaviourScript : MonoBehaviour {
     {
         //Controls
         moveX = Input.GetAxis("Horizontal");
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
         //Animations
         //player dir
         if(moveX < 0.0f && facingRight == false)
@@ -33,19 +37,21 @@ public class NewBehaviourScript : MonoBehaviour {
             FlipPlayer();
         }
         //physics
-        gameObject.GetComponent<Rigidbody2d>().velocity = new vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2d>().velocity.y);
-
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
 
     }
 
     void Jump()
     {
-
+        GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
     }
 
     void FlipPlayer()
     {
-
+        facingRight = !facingRight;
+        Vector2 localScale = gameObject.transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 
 }
