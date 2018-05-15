@@ -10,10 +10,11 @@ public class Player_Movement : MonoBehaviour {
     public float moveX;
     public bool isGrounded;
     public bool isMoving = false;
+    private Animator anim;
 
 	// Use this for initialization
 	void Start () {
-		
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -32,6 +33,7 @@ public class Player_Movement : MonoBehaviour {
         {
             isMoving = false;
         }
+        anim.SetBool("isMoving", isMoving);
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             Jump();
@@ -54,6 +56,7 @@ public class Player_Movement : MonoBehaviour {
     {
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
         isGrounded = false;
+        anim.SetBool("isGrounded", isGrounded);
     }
 
     void FlipPlayer()
@@ -69,6 +72,7 @@ public class Player_Movement : MonoBehaviour {
         if (collision.gameObject.tag == "ground")
         {
             isGrounded = true;
+            anim.SetBool("isGrounded", isGrounded);
         }
     }
 }
