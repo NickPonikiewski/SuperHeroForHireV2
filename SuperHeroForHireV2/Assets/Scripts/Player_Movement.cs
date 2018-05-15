@@ -9,6 +9,7 @@ public class Player_Movement : MonoBehaviour {
     public int playerJumpPower = 1250;
     public float moveX;
     public bool isGrounded;
+    public bool isMoving = false;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,13 @@ public class Player_Movement : MonoBehaviour {
     {
         //Controls
         moveX = Input.GetAxis("Horizontal");
+        if(moveX > 0.0f || moveX < 0.0f)
+        {
+            isMoving = true;
+        } else
+        {
+            isMoving = false;
+        }
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             Jump();
