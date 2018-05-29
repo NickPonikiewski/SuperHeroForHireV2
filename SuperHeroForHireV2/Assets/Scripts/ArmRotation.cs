@@ -4,6 +4,7 @@ using System.Collections;
 public class ArmRotation : MonoBehaviour
 {
     public Transform hitPoint;
+    public Transform Crosshair;
     public bool direction;
     public Camera cam;
     public int posOffset;
@@ -17,24 +18,25 @@ public class ArmRotation : MonoBehaviour
     void Update()
     {
         //rotation
-        Vector3 mousePos = Input.mousePosition;
+        //Vector3 mousePos = Input.mousePosition;
+        Vector3 mousePos = Crosshair.position;
         mousePos.z = 5f;
 
-        Vector3 objectPos = cam.WorldToScreenPoint(transform.position);
+        //Vector3 objectPos = cam.WorldToScreenPoint(transform.position);
 
-        mousePos.x = mousePos.x - objectPos.x;
-        mousePos.y = mousePos.y - objectPos.y;
+        //mousePos.x = mousePos.x - objectPos.x;
+       // mousePos.y = mousePos.y - objectPos.y;
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 
         if (direction == true)
         {
-            posOffset = 0;
+            posOffset = 30;
         }
 
         if (direction == false)
         {
-            posOffset = 0;
+            posOffset = 20;
         }
 
         //if (!(angle > 80f && angle < 120f))
