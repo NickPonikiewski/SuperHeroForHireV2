@@ -7,5 +7,11 @@ public class MoveBullet : MonoBehaviour {
 	void Update ()
     {
         transform.Translate(Vector3.right * Time.deltaTime * speed);
+
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
 }

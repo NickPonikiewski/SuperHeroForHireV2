@@ -23,8 +23,9 @@ public class EnemyAI : MonoBehaviour {
         Vector3 forward = XMoveDirection * transform.right;
         float angle = Vector3.Angle(targetDir, forward);
         var dist = Vector3.Distance(target.position, transform.position);
-       
-        if(targetDir.x < 0)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDir);
+
+        if (targetDir.x < 0)
         {
             MoveDir = -1;
         }
@@ -32,7 +33,7 @@ public class EnemyAI : MonoBehaviour {
         {
             MoveDir = 1;
         }
-        if ((angle < 15.0F) && (Mathf.Abs(dist) < MaxDist && Mathf.Abs(dist) > MinDist) && (Hold == false)) // sees if player is in view angle and within distance
+        if ((angle < 15.0F) && (Mathf.Abs(dist) < MaxDist && Mathf.Abs(dist) > MinDist) && (Hold == false) && (Mathf.Floor(hit.distance) >= Mathf.Floor(dist))) // sees if player is in view angle and within distance
         {
             isAttacking = true;
             //shoot at player too
@@ -76,9 +77,11 @@ public class EnemyAI : MonoBehaviour {
         if(XMoveDirection > 0)
         {
             XMoveDirection = -1;
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         } else
         {
             XMoveDirection = 1;
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
     }
 }
