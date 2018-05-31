@@ -36,13 +36,14 @@ public class EnemyAI : MonoBehaviour {
         if ((angle < 15.0F) && (Mathf.Abs(dist) < MaxDist && Mathf.Abs(dist) > MinDist) && (Hold == false) && (Mathf.Floor(hit.distance) >= Mathf.Floor(dist))) // sees if player is in view angle and within distance
         {
             isAttacking = true;
-            //shoot at player too
+            Attack(hit);
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveDir * EnemySprint, gameObject.GetComponent<Rigidbody2D>().velocity.y);
 
         }
         else if(isAttacking == true)
         {
             Hold = true;
+            Attack(hit);
             // stop moving and attack
             //set timer to resume chase
             if(Mathf.Abs(dist) >= MaxDist-3)
@@ -68,20 +69,37 @@ public class EnemyAI : MonoBehaviour {
             Flip();
         }
     }
+    void Attack(RaycastHit2D Aim)
+    {
+        Vector3 AimAt = Aim.point;
+        Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
+        AimAt = Camera.main.WorldToScreenPoint(AimAt);
+        AimAt.x = AimAt.x - objectPos.x;
+        AimAt.y = AimAt.y - objectPos.y;
+
+        float angle = Mathf.Atan2(AimAt.y, AimAt.x) * Mathf.Rad2Deg;
+
+        gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+    }
     void Chase()
     {
         
     }
     void Flip()
     {
-        if(XMoveDirection > 0)
+        if (XMoveDirection > 0)
         {
             XMoveDirection = -1;
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
-        } else
+        }
+        else
         {
             XMoveDirection = 1;
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
+
+        Vector2 localScale = gameObject.transform.GetChild(0).transform.localScale;
+        localScale.x *= -1;
+        transform.GetChild(0).transform.localScale = localScale;
     }
 }

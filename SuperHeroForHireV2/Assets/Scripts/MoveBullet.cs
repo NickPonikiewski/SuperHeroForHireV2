@@ -10,8 +10,10 @@ public class MoveBullet : MonoBehaviour {
 
 	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        Debug.Log("Coll");
+        Destroy(this.gameObject);
     }
+
 }
