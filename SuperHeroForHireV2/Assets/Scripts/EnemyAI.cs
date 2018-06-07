@@ -8,13 +8,15 @@ public class EnemyAI : MonoBehaviour {
     public int EnemySprint = 10; 
     public int XMoveDirection = 1;
     public Transform target; // player
+    public bool direction;
     private bool isAttacking = false;
     private bool Hold = false;
     public int MaxDist = 20, MinDist = 5;
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start ()
+    {
+        direction = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -80,10 +82,45 @@ public class EnemyAI : MonoBehaviour {
         float angle = Mathf.Atan2(AimAt.y, AimAt.x) * Mathf.Rad2Deg;
 
         gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+
+        if (angle > 0f && angle < 80f || angle < 0f && angle > -80f)
+        {
+            if (direction == false)
+            {
+                direction = true;
+                AttackFlip();
+            }
+        }
+
+        if (angle > 100f && angle < 180f || angle < -90f && angle > -180f)
+        {
+            if (direction == true)
+            {
+                direction = false;
+                AttackFlip();
+            }
+        }  
     }
     void Chase()
     {
         
+    }
+    void AttackFlip()
+    {
+        if (XMoveDirection > 0)
+        {
+            XMoveDirection = -1;
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            XMoveDirection = 1;
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+
+        Vector2 localScale = gameObject.transform.GetChild(0).transform.localScale;
+        localScale.y *= -1;
+        transform.GetChild(0).transform.localScale = localScale;
     }
     void Flip()
     {
@@ -98,6 +135,7 @@ public class EnemyAI : MonoBehaviour {
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
 
+        direction = !direction;
         Vector2 localScale = gameObject.transform.GetChild(0).transform.localScale;
         localScale.x *= -1;
         transform.GetChild(0).transform.localScale = localScale;
