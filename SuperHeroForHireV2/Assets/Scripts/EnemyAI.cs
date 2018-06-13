@@ -99,7 +99,9 @@ public class EnemyAI : MonoBehaviour {
                 direction = false;
                 AttackFlip();
             }
-        }  
+        }
+        
+
     }
     void Chase()
     {
