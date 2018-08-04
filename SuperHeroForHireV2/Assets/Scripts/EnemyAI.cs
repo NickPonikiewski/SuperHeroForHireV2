@@ -25,7 +25,11 @@ public class EnemyAI : MonoBehaviour {
         Vector3 forward = XMoveDirection * transform.right;
         float angle = Vector3.Angle(targetDir, forward);
         var dist = Vector3.Distance(target.position, transform.position);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDir);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDir); // see if player is in sight of enemy 
+
+        Debug.Log("hit dis: " + hit.distance);
+        Debug.Log("dis: " + dist);
+        Debug.Log("(Mathf.Floor(hit.distance) >= Mathf.Floor(dist) == " + (Mathf.Floor(hit.distance) >= Mathf.Floor(dist)));
 
         if (targetDir.x < 0)
         {
@@ -35,7 +39,7 @@ public class EnemyAI : MonoBehaviour {
         {
             MoveDir = 1;
         }
-        if ((angle < 15.0F) && (Mathf.Abs(dist) < MaxDist && Mathf.Abs(dist) > MinDist) && (Hold == false) && (Mathf.Floor(hit.distance) >= Mathf.Floor(dist))) // sees if player is in view angle and within distance
+        if ((angle < 15.0F) && (Mathf.Abs(dist) < MaxDist) && (Mathf.Abs(dist) > MinDist) && (Hold == false) && (Mathf.Floor(hit.distance) >= Mathf.Floor(dist))) // sees if player is in view angle and within distance and if enemy can see them
         {
             isAttacking = true;
             Attack(hit);
@@ -44,13 +48,25 @@ public class EnemyAI : MonoBehaviour {
         }
         else if(isAttacking == true)
         {
-            Hold = true;
-            Attack(hit);
-            // stop moving and attack
-            //set timer to resume chase
-            if(Mathf.Abs(dist) >= MaxDist-3)
+            Debug.Log("hit: " + Mathf.Floor(hit.distance));
+            Debug.Log("Dist: " + Mathf.Floor(dist));
+            if (Mathf.Floor(hit.distance) < Mathf.Floor(dist))
             {
+                //replace with searching() in future
                 Hold = false;
+                isAttacking = false;
+            }
+            else
+            {
+                Hold = true;
+                Attack(hit);
+                // stop moving and attack
+                //set timer to resume chase
+                if (Mathf.Abs(dist) >= MaxDist - 3)
+                {
+                    Hold = false;
+                    isAttacking = false;
+                }
             }
         }
         else
