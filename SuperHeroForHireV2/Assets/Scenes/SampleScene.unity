@@ -888,6 +888,8 @@ MonoBehaviour:
   direction: 0
   MaxDist: 10
   MinDist: 5
+  _TimeToFire: 5
+  _FireRate: 5
 --- !u!50 &1176596963
 Rigidbody2D:
   serializedVersion: 4
