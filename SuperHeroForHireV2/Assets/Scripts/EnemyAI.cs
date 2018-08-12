@@ -15,6 +15,9 @@ public class EnemyAI : MonoBehaviour {
     private bool isAttacking = false;
     private bool Hold = false;
     public int MaxDist = 20, MinDist = 5;
+    public float _TimeToFire;
+    public float _FireRate;
+    private bool isShooting = true;
     // Use this for initialization
     void Start ()
     {
@@ -108,9 +111,14 @@ public class EnemyAI : MonoBehaviour {
         }
 
         //shoot
-        Instantiate(bulletPre, _FirePoint.position, _FirePoint.rotation);
-       // Vector2 firePP = new Vector2(_FirePoint.position.x, _FirePoint.position.y);
-        RaycastHit2D hit = Physics2D.Raycast(objectPos, -AimAt, 100, hitWhat);
+        if (true)
+        {
+            _TimeToFire = Time.time + 1 / _FireRate;
+            isShooting = false;
+            Instantiate(bulletPre, _FirePoint.position, _FirePoint.rotation);
+            Vector2 firePP = new Vector2(_FirePoint.position.x, _FirePoint.position.y);
+            RaycastHit2D hit = Physics2D.Raycast(firePP, AimAt, 100, hitWhat);
+        }
     }
     void Chase()
     {
