@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: a5d70ab335f13ba44a4d8496eb61f511
+guid: 7871632d2864f5342875a0db2cd4540e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Menu Canvas 1_0
-    21300002: Menu Canvas 1_1
-    21300004: Menu Canvas 1_2
-    21300006: Menu Canvas 1_3
-    21300008: Menu Canvas 1_4
+    21300000: Menu Canvas_0
+    21300002: Menu Canvas_1
+    21300004: Menu Canvas_2
+    21300006: Menu Canvas_3
+    21300008: Menu Canvas_4
+    21300010: Menu Canvas_5
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -87,7 +88,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Menu Canvas 1_0
+      name: Menu Canvas_0
       rect:
         serializedVersion: 2
         x: 0
@@ -101,13 +102,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae96391ed73394c449d56c2dd2acdea5
+      spriteID: 9ef32378867bbb84bb36f7c468ee59de
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu Canvas 1_1
+      name: Menu Canvas_1
       rect:
         serializedVersion: 2
         x: 236
@@ -121,13 +122,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3be54dbbb3af32469983e51d212628b
+      spriteID: cbffccf715bca02418778a8534a53e42
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu Canvas 1_2
+      name: Menu Canvas_2
       rect:
         serializedVersion: 2
         x: 62
@@ -141,13 +142,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25e52dd0613c45447b6d1b4d7578e21c
+      spriteID: ba0636e39108510498f7092bd5b8ef83
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu Canvas 1_3
+      name: Menu Canvas_3
       rect:
         serializedVersion: 2
         x: 230
@@ -161,13 +162,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36c7f4e5746138d459aa10abe89d3bf8
+      spriteID: 4425521a00163b64ab613469a55e122d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu Canvas 1_4
+      name: Menu Canvas_4
       rect:
         serializedVersion: 2
         x: 65
@@ -181,7 +182,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 748c6300f2a8fc74cb0e1e51f0a1acd1
+      spriteID: b6524185befdd1e4d98ea8bee5171d47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Canvas_5
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 76
+        width: 40
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfbc1848ee82964eabe3eeff7dc85d5
       vertices: []
       indices: 
       edges: []
@@ -189,7 +210,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 82fec9846c0edc64e9a359427208b7dc
+    spriteID: 5ee8396327588184f8427b2f40d65a8c
     vertices: []
     indices: 
     edges: []
