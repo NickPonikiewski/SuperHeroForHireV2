@@ -8,6 +8,9 @@ public class EnemyAI : MonoBehaviour {
     public int EnemySprint = 10; 
     public int XMoveDirection = 1;
     public Transform target; // player
+    public Transform bulletPre;
+    public Transform _FirePoint;
+    public LayerMask hitWhat;
     public bool direction;
     private bool isAttacking = false;
     private bool Hold = false;
@@ -27,10 +30,6 @@ public class EnemyAI : MonoBehaviour {
         var dist = Vector3.Distance(target.position, transform.position);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDir); // see if player is in sight of enemy 
 
-        Debug.Log("hit dis: " + hit.distance);
-        Debug.Log("dis: " + dist);
-        Debug.Log("(Mathf.Floor(hit.distance) >= Mathf.Floor(dist) == " + (Mathf.Floor(hit.distance) >= Mathf.Floor(dist)));
-
         if (targetDir.x < 0)
         {
             MoveDir = -1;
@@ -48,25 +47,16 @@ public class EnemyAI : MonoBehaviour {
         }
         else if(isAttacking == true)
         {
-            Debug.Log("hit: " + Mathf.Floor(hit.distance));
-            Debug.Log("Dist: " + Mathf.Floor(dist));
-            if (Mathf.Floor(hit.distance) < Mathf.Floor(dist))
+
+            Hold = true;
+            Attack(hit);
+            // stop moving and attack
+            //set timer to resume chase
+            if (Mathf.Abs(dist) >= MaxDist - 3)
             {
-                //replace with searching() in future
                 Hold = false;
                 isAttacking = false;
-            }
-            else
-            {
-                Hold = true;
-                Attack(hit);
-                // stop moving and attack
-                //set timer to resume chase
-                if (Mathf.Abs(dist) >= MaxDist - 3)
-                {
-                    Hold = false;
-                    isAttacking = false;
-                }
+                gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
         }
         else
@@ -116,8 +106,11 @@ public class EnemyAI : MonoBehaviour {
                 AttackFlip();
             }
         }
-        
 
+        //shoot
+        Instantiate(bulletPre, _FirePoint.position, _FirePoint.rotation);
+       // Vector2 firePP = new Vector2(_FirePoint.position.x, _FirePoint.position.y);
+        RaycastHit2D hit = Physics2D.Raycast(objectPos, -AimAt, 100, hitWhat);
     }
     void Chase()
     {
