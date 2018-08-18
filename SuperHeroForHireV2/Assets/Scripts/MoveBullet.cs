@@ -12,7 +12,7 @@ public class MoveBullet : MonoBehaviour {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Coll");
+        //Debug.Log("Coll");
         Destroy(this.gameObject);
     }
 
