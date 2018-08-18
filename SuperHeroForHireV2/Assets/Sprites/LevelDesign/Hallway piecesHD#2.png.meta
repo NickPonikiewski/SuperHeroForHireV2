@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 7871632d2864f5342875a0db2cd4540e
+guid: 6658607b40368014baa79ab876ad5c64
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Menu Canvas_0
-    21300002: Menu Canvas_1
-    21300004: Menu Canvas_2
-    21300006: Menu Canvas_3
-    21300008: Menu Canvas_4
-    21300010: Menu Canvas_5
+    21300000: Hallway piecesHD#2_0
+    21300002: Hallway piecesHD#2_1
+    21300004: Hallway piecesHD#2_2
+    21300006: Hallway piecesHD#2_3
+    21300008: Hallway piecesHD#2_4
+    21300010: Hallway piecesHD#2_5
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -35,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -67,7 +67,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -78,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -88,121 +88,121 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Menu Canvas_0
+      name: Hallway piecesHD#2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 350
-        width: 175
-        height: 175
+        x: 1738
+        y: 2634
+        width: 6
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ef32378867bbb84bb36f7c468ee59de
+      spriteID: 43cb18ab97f03b9489558059ef6c552a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu Canvas_1
+      name: Hallway piecesHD#2_1
       rect:
         serializedVersion: 2
-        x: 236
-        y: 421
-        width: 85
-        height: 16
+        x: 2245
+        y: 2213
+        width: 580
+        height: 781
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbffccf715bca02418778a8534a53e42
+      spriteID: 3fee90ad13391a4439a5b98a7aae702c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu Canvas_2
+      name: Hallway piecesHD#2_2
       rect:
         serializedVersion: 2
-        x: 62
-        y: 229
-        width: 75
-        height: 14
+        x: 291
+        y: 2119
+        width: 1036
+        height: 431
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba0636e39108510498f7092bd5b8ef83
+      spriteID: eed9a749013e1234e9322669221c51cd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu Canvas_3
+      name: Hallway piecesHD#2_3
       rect:
         serializedVersion: 2
-        x: 230
-        y: 232
-        width: 68
-        height: 17
+        x: 1794
+        y: 2289
+        width: 450
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4425521a00163b64ab613469a55e122d
+      spriteID: 6d7be5ad1c916df41b6ba2259beab191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu Canvas_4
+      name: Hallway piecesHD#2_4
       rect:
         serializedVersion: 2
-        x: 65
-        y: 76
-        width: 39
-        height: 14
+        x: 179
+        y: 613
+        width: 1255
+        height: 785
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6524185befdd1e4d98ea8bee5171d47
+      spriteID: 5778c9c2afd652e43baffea0f79f5963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Menu Canvas_5
+      name: Hallway piecesHD#2_5
       rect:
         serializedVersion: 2
-        x: 250
-        y: 76
-        width: 40
-        height: 14
+        x: 2775
+        y: 819
+        width: 50
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cfbc1848ee82964eabe3eeff7dc85d5
+      spriteID: 9aab29fe78db1ac4ca51a87d451162e6
       vertices: []
       indices: 
       edges: []
@@ -210,7 +210,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5ee8396327588184f8427b2f40d65a8c
+    spriteID: 673adcfab678db14d9a0ab544024c150
     vertices: []
     indices: 
     edges: []
