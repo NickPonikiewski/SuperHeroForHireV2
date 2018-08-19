@@ -9,6 +9,48 @@ TextureImporter:
     21300008: Health & Armor Bar_4
     21300010: Health & Armor Bar_5
     21300012: Health & Armor Bar_6
+    21300014: Health & Armor Bar_7
+    21300016: Health & Armor Bar_8
+    21300018: Health & Armor Bar_9
+    21300020: Health & Armor Bar_10
+    21300022: Health & Armor Bar_11
+    21300024: Health & Armor Bar_12
+    21300026: Health & Armor Bar_13
+    21300028: Health & Armor Bar_14
+    21300030: Health & Armor Bar_15
+    21300032: Health & Armor Bar_16
+    21300034: Health & Armor Bar_17
+    21300036: Health & Armor Bar_18
+    21300038: Health & Armor Bar_19
+    21300040: Health & Armor Bar_20
+    21300042: Health & Armor Bar_21
+    21300044: Health & Armor Bar_22
+    21300046: Health & Armor Bar_23
+    21300048: Health & Armor Bar_24
+    21300050: Health & Armor Bar_25
+    21300052: Health & Armor Bar_26
+    21300054: Health & Armor Bar_27
+    21300056: Health & Armor Bar_28
+    21300058: Health & Armor Bar_29
+    21300060: Health & Armor Bar_30
+    21300062: Health & Armor Bar_31
+    21300064: Health & Armor Bar_32
+    21300066: Health & Armor Bar_33
+    21300068: Health & Armor Bar_34
+    21300070: Health & Armor Bar_35
+    21300072: Health & Armor Bar_36
+    21300074: Health & Armor Bar_37
+    21300076: Health & Armor Bar_38
+    21300078: Health & Armor Bar_39
+    21300080: Health & Armor Bar_40
+    21300082: Health & Armor Bar_41
+    21300084: Health & Armor Bar_42
+    21300086: Health & Armor Bar_43
+    21300088: Health & Armor Bar_44
+    21300090: Health & Armor Bar_45
+    21300092: Health & Armor Bar_46
+    21300094: Health & Armor Bar_47
+    21300096: Health & Armor Bar_48
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -85,61 +127,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -147,10 +134,10 @@ TextureImporter:
       name: Health & Armor Bar_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 199
-        width: 48
-        height: 12
+        x: 85
+        y: 2865
+        width: 766
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac43199f61ccda34caa075a66b3377ce
+      spriteID: 1cd449c204ad41e4f8c277c09dbe13c2
       vertices: []
       indices: 
       edges: []
@@ -167,10 +154,10 @@ TextureImporter:
       name: Health & Armor Bar_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 198
-        width: 49
-        height: 13
+        x: 1155
+        y: 2849
+        width: 782
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,7 +165,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f4a2a7db5e2c094d862368a3a34d2f8
+      spriteID: 1f19cef81937dd94b9a080b766cd7bba
       vertices: []
       indices: 
       edges: []
@@ -187,10 +174,10 @@ TextureImporter:
       name: Health & Armor Bar_2
       rect:
         serializedVersion: 2
-        x: 156
-        y: 197
-        width: 48
-        height: 16
+        x: 2245
+        y: 2837
+        width: 767
+        height: 231
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,7 +185,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a02cc2778999bc4982ad8bc39e2b1be
+      spriteID: ca09de4ca8fe14f46bbffff5d1376adf
       vertices: []
       indices: 
       edges: []
@@ -207,9 +194,9 @@ TextureImporter:
       name: Health & Armor Bar_3
       rect:
         serializedVersion: 2
-        x: 30
-        y: 126
-        width: 7
+        x: 209
+        y: 2398
+        width: 12
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -218,7 +205,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87014b29eddaf9d47bcf904f1216db3d
+      spriteID: 381d1c6e12e1b45469f5568225192b4b
       vertices: []
       indices: 
       edges: []
@@ -227,10 +214,10 @@ TextureImporter:
       name: Health & Armor Bar_4
       rect:
         serializedVersion: 2
-        x: 116
-        y: 126
-        width: 7
-        height: 8
+        x: 1860
+        y: 2398
+        width: 24
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,7 +225,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73f46896fb562034eb41696a12e8897d
+      spriteID: 7dec312b5e8a1ef4499dfe28c5ddf85a
       vertices: []
       indices: 
       edges: []
@@ -247,10 +234,10 @@ TextureImporter:
       name: Health & Armor Bar_5
       rect:
         serializedVersion: 2
-        x: 191
-        y: 126
-        width: 7
-        height: 8
+        x: 2746
+        y: 2398
+        width: 13
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,7 +245,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2aeef93e06246074283f3761f2a2bfce
+      spriteID: 63580849e48c68549b3bf48ca5dd6205
       vertices: []
       indices: 
       edges: []
@@ -267,9 +254,9 @@ TextureImporter:
       name: Health & Armor Bar_6
       rect:
         serializedVersion: 2
-        x: 41
-        y: 51
-        width: 7
+        x: 2759
+        y: 2398
+        width: 6
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -278,7 +265,847 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 826474a77bc9a2b45b09a1085bb1e9f4
+      spriteID: 1b096eeb7c4cea94196b6789b5afd6da
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_7
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 2398
+        width: 38
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a04f81048f154445b69170268f1796d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_8
+      rect:
+        serializedVersion: 2
+        x: 2848
+        y: 2398
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da048e903a6e8f1478c22ef72ad99256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2375
+        width: 203
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18634f0b754393a4da9d6d04e483c769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_10
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1804
+        width: 562
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b15ece459a12114f88e7fd99b022292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_11
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 2386
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b04b9dbfe286c24e821e17edb271fb7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_12
+      rect:
+        serializedVersion: 2
+        x: 2303
+        y: 1810
+        width: 551
+        height: 588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9555d8a0aeddcb7409ada5f8b505fc8c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_13
+      rect:
+        serializedVersion: 2
+        x: 2867
+        y: 2392
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b82a5e5813c33459628be53848dc47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_14
+      rect:
+        serializedVersion: 2
+        x: 2721
+        y: 2386
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9f261b51c99aeb4fbe44ced77ee020c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_15
+      rect:
+        serializedVersion: 2
+        x: 2878
+        y: 2379
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a45bcbad989992428a9916b18412845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_16
+      rect:
+        serializedVersion: 2
+        x: 2708
+        y: 2379
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094207a5f68f6424c9cbd10fb2d7e860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_17
+      rect:
+        serializedVersion: 2
+        x: 2905
+        y: 2373
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9038a4345ecb7ef4ab3a9022109702a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_18
+      rect:
+        serializedVersion: 2
+        x: 2683
+        y: 2367
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bfb90878699a1745a8ecb76873930d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_19
+      rect:
+        serializedVersion: 2
+        x: 2916
+        y: 2360
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39328f85af6d17f4db4eb4af027c40b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_20
+      rect:
+        serializedVersion: 2
+        x: 2670
+        y: 2360
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec45f5af5446f3a438ca9c27172210ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_21
+      rect:
+        serializedVersion: 2
+        x: 2645
+        y: 2348
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01f338a81155b54db2e1ec53ea2ee3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_22
+      rect:
+        serializedVersion: 2
+        x: 2954
+        y: 2341
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb0216f370e0884aaecf5bc41b6b811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_23
+      rect:
+        serializedVersion: 2
+        x: 2625
+        y: 2341
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ebaf5c77614ce54ea5ed2d4f0aa0326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_24
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 2329
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5208391754fa34f972cd1b13f87bd5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_25
+      rect:
+        serializedVersion: 2
+        x: 2987
+        y: 2322
+        width: 253
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c95ddc01e051ed459e935e711e7fd3c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_26
+      rect:
+        serializedVersion: 2
+        x: 2595
+        y: 2322
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8af4fb07219c34fb1aa3e38f5ebdd9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_27
+      rect:
+        serializedVersion: 2
+        x: 2569
+        y: 2310
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8857584e64ceaa842b9bb97012808b22
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_28
+      rect:
+        serializedVersion: 2
+        x: 2557
+        y: 2303
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2268e191064874947b3a307358f81f48
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_29
+      rect:
+        serializedVersion: 2
+        x: 2531
+        y: 2291
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efad9b63611e80549907b572edfb3987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_30
+      rect:
+        serializedVersion: 2
+        x: 2519
+        y: 2284
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624cdd5281ce6844587b43d863ba62c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_31
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 2278
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e858f9ac5f6a044a5d3cda0c09c17c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_32
+      rect:
+        serializedVersion: 2
+        x: 2493
+        y: 2272
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72dd65a0b0f2574da3ce81931fb2d12
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_33
+      rect:
+        serializedVersion: 2
+        x: 2481
+        y: 2265
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c99dfbc4e7c8b4647a1f6cfe94c8c30c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_34
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 2259
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77983bde037562c4985283c06269d8bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_35
+      rect:
+        serializedVersion: 2
+        x: 2455
+        y: 2253
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a9c37940a503b4cb33c2a968608100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_36
+      rect:
+        serializedVersion: 2
+        x: 2443
+        y: 2246
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe63ba5b493ef0442be60de1edf0055f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_37
+      rect:
+        serializedVersion: 2
+        x: 2430
+        y: 2240
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc302eddcdde6d40948c4a84e914b33
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_38
+      rect:
+        serializedVersion: 2
+        x: 2417
+        y: 2234
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1274fec6d94132b4e828664f1682d227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_39
+      rect:
+        serializedVersion: 2
+        x: 2405
+        y: 2228
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f051c178e40794184a4eab3194f77c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_40
+      rect:
+        serializedVersion: 2
+        x: 2373
+        y: 2207
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51be0a700fdad394ba86c1728d3ec8b5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_41
+      rect:
+        serializedVersion: 2
+        x: 2341
+        y: 2177
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae47c13432fb464881fe219ba2b2b19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_42
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1797
+        width: 582
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0006438e2e5b8174cbac3852723d0d0a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_43
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 1943
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513cf994ca0c53646b710359d3d1ab23
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_44
+      rect:
+        serializedVersion: 2
+        x: 2303
+        y: 1848
+        width: 7
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b47fce955805744b5afb256e3d9cff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_45
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1797
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c094396d6fd52fb4485b16815ced3f76
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_46
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 804
+        width: 469
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6005580bfbcf067488541cf840ae8eb9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_47
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 732
+        width: 159
+        height: 598
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc019bce48ab5d4789e116be228525a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health & Armor Bar_48
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 0
+        width: 2058
+        height: 1324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a95ab77cd42f1645834265a5bdd40d9
       vertices: []
       indices: 
       edges: []
@@ -286,7 +1113,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5a16396a45b281541a086790a9cfd6e4
+    spriteID: 057ac90cc80ffcf4f82aaa4c7953e631
     vertices: []
     indices: 
     edges: []

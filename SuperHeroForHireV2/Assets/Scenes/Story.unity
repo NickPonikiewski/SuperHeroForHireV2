@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 1160612013}
   - component: {fileID: 1160612012}
   - component: {fileID: 1160612011}
+  - component: {fileID: 1160612014}
   m_Layer: 5
   m_Name: StoryText
   m_TagString: Untagged
@@ -232,10 +233,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 20
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -243,7 +244,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: THEY DUN STOLE MY ARMORS
 --- !u!222 &1160612012
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -268,6 +269,17 @@ RectTransform:
   m_AnchoredPosition: {x: 445, y: 211}
   m_SizeDelta: {x: 799.7, y: 363.2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1160612014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1160612010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403bd88cff740eb43b20fd62f61f4f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1294204201
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,8 +410,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1527638536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.95, y: -3.1, z: -0.1484375}
-  m_LocalScale: {x: 1.2281148, y: 0.7550261, z: 1}
+  m_LocalPosition: {x: 0.064, y: 0.079, z: -0.1484375}
+  m_LocalScale: {x: 1.0188544, y: 0.51058185, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
