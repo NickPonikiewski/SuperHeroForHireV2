@@ -39,8 +39,8 @@ public class Stat
 
         set
         {
-            bar.MaxValue = value;
             this.maxVal = value;
+            bar.MaxValue = maxVal;
         }
     }
 

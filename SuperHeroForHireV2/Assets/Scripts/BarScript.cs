@@ -41,11 +41,12 @@ public class BarScript : MonoBehaviour
         {
             //updates health
             content.fillAmount = fillAmount;
+            
         }
         
     }
 
-    private float Map(float value, float inMin, float inMax, float outMax, float outMin)
+    private float Map(float value, float inMin, float inMax, float outMin, float outMax)
     {
         // sclaes the player's Health and health bar
         return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
