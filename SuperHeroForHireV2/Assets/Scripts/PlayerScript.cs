@@ -6,6 +6,8 @@ public class PlayerScript : MonoBehaviour {
     [SerializeField]
     private Stat health;
 
+    private Vector2 touchOrigin = -Vector2.one;
+
     private void Awake()
     {
         health.Initialize();
@@ -28,6 +30,8 @@ public class PlayerScript : MonoBehaviour {
         {
             health.CurrentVal += 10;
         }
+
+
 
     }
     
