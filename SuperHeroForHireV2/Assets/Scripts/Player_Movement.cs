@@ -36,6 +36,7 @@ public class Player_Movement : MonoBehaviour {
         anim.SetBool("isMoving", isMoving);
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
+            Debug.Log("Jump button");
             Jump();
         }
         //Animations
@@ -55,6 +56,7 @@ public class Player_Movement : MonoBehaviour {
 
     void Jump()
     {
+        Debug.Log("Jumping");
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
         isGrounded = false;
         anim.SetBool("isGrounded", isGrounded);

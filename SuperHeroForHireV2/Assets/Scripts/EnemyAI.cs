@@ -52,7 +52,6 @@ public class EnemyAI : MonoBehaviour {
         }
         else if(isAttacking == true)
         {
-
             Hold = true;
             Attack(hit);
             // stop moving and attack
@@ -73,6 +72,11 @@ public class EnemyAI : MonoBehaviour {
                     gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
                   
                 }
+            }
+            if(Mathf.Abs(dist) <= MinDist)
+            {
+                //back away
+                BackPed();
             }
         }
         else
@@ -150,6 +154,10 @@ public class EnemyAI : MonoBehaviour {
             _TimeToFire = 1f / _FireRate;
         }
         _TimeToFire -= Time.deltaTime;
+    }
+    void BackPed()
+    {
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2( -1 * (XMoveDirection) * EnemySpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
     }
     void Chase()
     {

@@ -539,6 +539,10 @@ Prefab:
       propertyPath: m_Name
       value: 2way
       objectReference: {fileID: 0}
+    - target: {fileID: 1512567421504648, guid: 8e33a94d5c3caed409102bcfd92a8937, type: 2}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e33a94d5c3caed409102bcfd92a8937, type: 2}
   m_IsPrefabParent: 0
@@ -610,6 +614,10 @@ Prefab:
         type: 2}
       propertyPath: m_Size.x
       value: 8.404901
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260673131389750, guid: 13cdd49a98e4e81488498c42febbd386, type: 2}
+      propertyPath: m_TagString
+      value: ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13cdd49a98e4e81488498c42febbd386, type: 2}
@@ -981,7 +989,7 @@ Prefab:
     - target: {fileID: 114385258574981782, guid: ce95a1f4f7e04cb45b97737ad3c6fddd,
         type: 2}
       propertyPath: playerJumpPower
-      value: 120
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 61594092929147308, guid: ce95a1f4f7e04cb45b97737ad3c6fddd,
         type: 2}
@@ -1017,6 +1025,21 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212197063966982144, guid: ce95a1f4f7e04cb45b97737ad3c6fddd,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 212670568754349570, guid: ce95a1f4f7e04cb45b97737ad3c6fddd,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 212819801386226708, guid: ce95a1f4f7e04cb45b97737ad3c6fddd,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce95a1f4f7e04cb45b97737ad3c6fddd, type: 2}
@@ -2097,6 +2120,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 29
       objectReference: {fileID: 0}
+    - target: {fileID: 1456156380851974, guid: c8e2a4c642cf23e4d91eb7d1c5fe238a, type: 2}
+      propertyPath: m_TagString
+      value: ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8e2a4c642cf23e4d91eb7d1c5fe238a, type: 2}
   m_IsPrefabParent: 0
@@ -2481,6 +2508,10 @@ Prefab:
     - target: {fileID: 4790011066220500, guid: 865ed410d99bbf448b3644fe390f6be5, type: 2}
       propertyPath: m_RootOrder
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935461377363666, guid: 865ed410d99bbf448b3644fe390f6be5, type: 2}
+      propertyPath: m_TagString
+      value: ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 865ed410d99bbf448b3644fe390f6be5, type: 2}
@@ -3874,6 +3905,10 @@ Prefab:
     - target: {fileID: 1327014413496534, guid: 6bb8364b8c0f16d45928540919b35433, type: 2}
       propertyPath: m_Name
       value: Stairs2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327014413496534, guid: 6bb8364b8c0f16d45928540919b35433, type: 2}
+      propertyPath: m_TagString
+      value: ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bb8364b8c0f16d45928540919b35433, type: 2}
