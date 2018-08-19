@@ -15,9 +15,11 @@ public class EnemyAI : MonoBehaviour {
     private bool isAttacking = false;
     private bool Hold = false;
     public int MaxDist = 20, MinDist = 5;
-    public float _TimeToFire;
-    public float _FireRate;
-    private bool isShooting = true;
+    private bool FirstAttack = true;
+
+
+    public float _TimeToFire = 0f;
+    public float _FireRate = 5f;
     // Use this for initialization
     void Start ()
     {
@@ -59,6 +61,7 @@ public class EnemyAI : MonoBehaviour {
             {
                 Hold = false;
                 isAttacking = false;
+                FirstAttack = true;
                 gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
         }
@@ -89,8 +92,17 @@ public class EnemyAI : MonoBehaviour {
         AimAt.y = AimAt.y - objectPos.y;
 
         float angle = Mathf.Atan2(AimAt.y, AimAt.x) * Mathf.Rad2Deg;
+        //float tempAngle = angle;
+        //if(direction == false)
+        //{
+        //    tempAngle += 180;
+        //}
+
 
         gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+        //gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        //gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, tempAngle));
+
 
         if (angle > 0f && angle < 80f || angle < 0f && angle > -80f)
         {
@@ -111,14 +123,18 @@ public class EnemyAI : MonoBehaviour {
         }
 
         //shoot
-        if (true)
+        if (_TimeToFire <= 0f)
         {
-            _TimeToFire = Time.time + 1 / _FireRate;
-            isShooting = false;
-            Instantiate(bulletPre, _FirePoint.position, _FirePoint.rotation);
-            Vector2 firePP = new Vector2(_FirePoint.position.x, _FirePoint.position.y);
-            RaycastHit2D hit = Physics2D.Raycast(firePP, AimAt, 100, hitWhat);
+            GameObject bulletGO = (Instantiate(bulletPre, _FirePoint.position, _FirePoint.rotation)).gameObject;
+            EnemyBullet bullet = bulletGO.GetComponent<EnemyBullet>();
+
+            if (bullet != null)
+            {
+                bullet.Seek(target);
+            }
+            _TimeToFire = 1f / _FireRate;
         }
+        _TimeToFire -= Time.deltaTime;
     }
     void Chase()
     {
