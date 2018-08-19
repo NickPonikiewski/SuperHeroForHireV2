@@ -62,7 +62,17 @@ public class EnemyAI : MonoBehaviour {
                 Hold = false;
                 isAttacking = false;
                 FirstAttack = true;
-                gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+
+                if (direction)
+                {
+                    gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                    
+                }
+                else
+                {
+                    gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+                  
+                }
             }
         }
         else
@@ -80,7 +90,20 @@ public class EnemyAI : MonoBehaviour {
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(XMoveDirection * EnemySpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
         if (((hit.distance < 1.1f) && (hit.distance != 0)) || (hole.distance == 0))
         {
-            Flip();
+
+            AttackFlip();
+            if (direction)//right
+            {
+                gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+
+            }
+            else // left
+            {
+                gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+
+            }
+            direction = !direction;
+
         }
     }
     void Attack(RaycastHit2D Aim)
@@ -90,19 +113,11 @@ public class EnemyAI : MonoBehaviour {
         AimAt = Camera.main.WorldToScreenPoint(AimAt);
         AimAt.x = AimAt.x - objectPos.x;
         AimAt.y = AimAt.y - objectPos.y;
+    
 
         float angle = Mathf.Atan2(AimAt.y, AimAt.x) * Mathf.Rad2Deg;
-        //float tempAngle = angle;
-        //if(direction == false)
-        //{
-        //    tempAngle += 180;
-        //}
 
-
-        gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
-        //gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        //gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, tempAngle));
-
+        gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         if (angle > 0f && angle < 80f || angle < 0f && angle > -80f)
         {
