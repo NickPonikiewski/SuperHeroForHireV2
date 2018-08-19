@@ -877,7 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemySpeed: 4
-  EnemySprint: 20
+  EnemySprint: 8
   XMoveDirection: 1
   target: {fileID: 982618811}
   bulletPre: {fileID: 4508662955328754, guid: 572115e83ed76d947acd8524ebfbff73, type: 2}
@@ -887,7 +887,7 @@ MonoBehaviour:
     m_Bits: 0
   direction: 0
   MaxDist: 15
-  MinDist: 7
+  MinDist: 6
   _TimeToFire: 5
   _FireRate: 0.75
 --- !u!50 &1176596963
