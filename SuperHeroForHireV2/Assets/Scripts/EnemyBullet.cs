@@ -25,8 +25,8 @@ public class EnemyBullet : MonoBehaviour {
 
         if (dir.magnitude <= distanceThisFrame)
         {
-            HitTarget();
-            return;
+            //HitTarget();
+            //return;
         }
         OldDir = dir;
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
@@ -44,8 +44,8 @@ public class EnemyBullet : MonoBehaviour {
 
         if(dir.magnitude <= distanceThisFrame)
         {
-            HitTarget();
-            return;
+            //HitTarget();
+            //return;
         }
 
         transform.Translate(OldDir.normalized * distanceThisFrame, Space.World);
@@ -53,6 +53,28 @@ public class EnemyBullet : MonoBehaviour {
 
     void HitTarget()
     {
+        PlayerScript health = target.gameObject.GetComponent<PlayerScript>();
+        health.SubHealth();
         Destroy(gameObject);
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject != null)
+        {
+            if (collision.gameObject.name == "Player")
+            {
+                if (target.gameObject != null)
+                {
+                    GameObject temp = target.gameObject;
+                    PlayerScript health = temp.GetComponent<PlayerScript>();
+                    if (health != null)
+                    {
+                        health.SubHealth();
+                    }
+                }
+            }
+        }
+        Destroy(this.gameObject);
     }
 }

@@ -12,6 +12,11 @@ public class MoveBullet : MonoBehaviour {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.name == "enemy")
+        {
+            EnemyAI health = collision.gameObject.GetComponent<EnemyAI>();
+            health.SubHealth();
+        }
         //Debug.Log("Coll");
         Destroy(this.gameObject);
     }

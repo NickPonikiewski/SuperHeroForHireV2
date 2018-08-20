@@ -30,9 +30,15 @@ public class PlayerScript : MonoBehaviour {
         {
             health.CurrentVal += 10;
         }
-
-
-
     }
-    
+
+    public void SubHealth()
+    {
+        health.CurrentVal -= 5;
+        if(health.CurrentVal <= 0)
+        {
+            //add death screen
+            Debug.Log("died");
+        }
+    }
 }
