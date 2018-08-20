@@ -774,6 +774,7 @@ GameObject:
   - component: {fileID: 1176596959}
   - component: {fileID: 1176596962}
   - component: {fileID: 1176596963}
+  - component: {fileID: 1176596964}
   m_Layer: 2
   m_Name: enemy
   m_TagString: ground
@@ -840,7 +841,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 17a4a50c0b626ec4ba2c4a4a6bb3ca9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -910,6 +911,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1176596964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176596958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7614782a9cc4e204986d6d13f884361d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 7
+  viewAngle: 90
 --- !u!1 &1924801803
 GameObject:
   m_ObjectHideFlags: 0
