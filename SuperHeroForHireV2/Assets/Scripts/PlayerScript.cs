@@ -32,7 +32,9 @@ public class PlayerScript : MonoBehaviour {
         {
             health.CurrentVal += 10;
         }
+    }
 
+<<<<<<< HEAD
         #if UNITY_STANDALONE || UNITY_WEBPLAYER
          
 
@@ -61,6 +63,15 @@ public class PlayerScript : MonoBehaviour {
         }
 
 #endif
+=======
+    public void SubHealth()
+    {
+        health.CurrentVal -= 5;
+        if(health.CurrentVal <= 0)
+        {
+            //add death screen
+            Debug.Log("died");
+        }
+>>>>>>> 57c6f451d8aba52c924b75a461eb224791429cb8
     }
-    
 }

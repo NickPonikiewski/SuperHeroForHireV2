@@ -20,6 +20,12 @@ public class EnemyAI : MonoBehaviour {
 
     public float _TimeToFire = 0f;
     public float _FireRate = 5f;
+
+    public float maxHealth = 100;
+    public float CurrHealth = 100;
+
+
+
     // Use this for initialization
     void Start ()
     {
@@ -162,6 +168,14 @@ public class EnemyAI : MonoBehaviour {
     void Chase()
     {
         
+    }
+    public void SubHealth()
+    {
+        CurrHealth -= 50;
+        if(CurrHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     void AttackFlip()
     {
