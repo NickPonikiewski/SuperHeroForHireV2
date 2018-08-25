@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -34,44 +35,25 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-<<<<<<< HEAD
+
         #if UNITY_STANDALONE || UNITY_WEBPLAYER
          
 
         #else
 
-        if(Input.touchCount > 0)
-        {
-            Touch myTouch = Input.touches[0];
-
-            if (myTouch.phase == TouchPhase.Began)
-            {
-                touchOrigin = myTouch.position;
-            }
-            else if (myTouch.phase == TouchPhase.Ended && touchOrigin.x >= 0)
-            {
-                Vector2 touchEnd = myTouch.position;
-                float x = touchEnd.x - touchOrigin.x;
-                float y = touchEnd.y - touchOrigin.y;
-                touchOrigin.x = -1;
-                if (Mathf.Abs(x) > Mathf.Abs(y))
-                    horizontal = x > 0 ? 1 : -1;
-                else
-                    vertical = y > 0 ? 1 : -1;
-            }
-           
-        }
+        
 
 #endif
-=======
+
     public void SubHealth()
     {
         health.CurrentVal -= 5;
         if(health.CurrentVal <= 0)
         {
             //add death screen
+            SceneManager.LoadScene("Game Over");
             Debug.Log("died");
         }
->>>>>>> 57c6f451d8aba52c924b75a461eb224791429cb8
+
     }
 }
