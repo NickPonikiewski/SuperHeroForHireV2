@@ -35,10 +35,7 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b376560cffca10708bb269019e0f87726f0a7345
         #if UNITY_STANDALONE || UNITY_WEBPLAYER
          
 
@@ -47,10 +44,7 @@ public class PlayerScript : MonoBehaviour {
         
 
 #endif
-<<<<<<< HEAD
 
-=======
->>>>>>> b376560cffca10708bb269019e0f87726f0a7345
     public void SubHealth()
     {
         health.CurrentVal -= 5;
@@ -60,9 +54,6 @@ public class PlayerScript : MonoBehaviour {
             SceneManager.LoadScene("Game Over");
             Debug.Log("died");
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> b376560cffca10708bb269019e0f87726f0a7345
     }
 }
