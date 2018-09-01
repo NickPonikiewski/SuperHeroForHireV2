@@ -10,6 +10,7 @@ public class Player_Movement : MonoBehaviour {
     public float moveX;
     public bool isGrounded;
     public bool isMoving = false;
+    public bool isCrouch = false;
     private Animator anim;
     public bool MoveDir;
     public bool SaveDir;
@@ -60,19 +61,22 @@ public class Player_Movement : MonoBehaviour {
         anim.SetBool("isMoving", isMoving);
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
-            Debug.Log("Jump button");
+    
             Jump();
         }
+        if(Input.GetKey(KeyCode.S) && isGrounded == true)
+        {
+            isCrouch = true;
+            anim.SetBool("isCrouch", isCrouch);
+        }
+        else
+        {
+            isCrouch = false;
+        }
+        anim.SetBool("isCrouch", isCrouch);
         //Animations
 
-        //player dir
-        //if(moveX < 0.0f && facingRight == false)
-        //{
-        //    FlipPlayer();
-        //} else if(moveX > 0.0f && facingRight == true )
-        //{
-        //    FlipPlayer();
-        //}
+       
         //physics
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
 

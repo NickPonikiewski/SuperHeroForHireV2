@@ -18,6 +18,7 @@ public class BehindCover : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.E) && PlayerDis <= MinPlayerDistance)
         {
             //move player to edge of surface stop movement (maybe just a sprite and hide real player)
+            Player.GetComponent<Player_Movement>().isCrouch = true;
             Debug.Log("Player in cover");
 
         }
