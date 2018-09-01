@@ -11,11 +11,15 @@ public class Player_Movement : MonoBehaviour {
     public bool isGrounded;
     public bool isMoving = false;
     private Animator anim;
-
+    public bool MoveDir;
+    public bool SaveDir;
+    public bool AltCont = false;
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
-	}
+        MoveDir = gameObject.transform.GetChild(0).GetComponent<ArmRotation>().direction;
+        SaveDir = gameObject.transform.GetChild(0).GetComponent<ArmRotation>().direction;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,12 +30,32 @@ public class Player_Movement : MonoBehaviour {
     {
         //Controls
         moveX = Input.GetAxis("Horizontal");
-        if(moveX > 0.0f || moveX < 0.0f)
+        
+        //invert MoveDir when dir is changed 
+        if(SaveDir != gameObject.transform.GetChild(0).GetComponent<ArmRotation>().direction)
+        {
+            MoveDir = !MoveDir;
+            SaveDir = gameObject.transform.GetChild(0).GetComponent<ArmRotation>().direction;
+        }
+        
+        if (moveX > 0.0f || moveX < 0.0f)
         {
             isMoving = true;
+            if (!MoveDir && AltCont)
+            {
+                moveX = moveX * -1f;
+            }
         } else
         {
             isMoving = false;
+            if (!gameObject.transform.GetChild(0).GetComponent<ArmRotation>().direction && AltCont) // set master only when stoped
+            {
+                MoveDir = !gameObject.transform.GetChild(0).GetComponent<ArmRotation>().direction;
+            }
+            else
+            {
+                MoveDir = gameObject.transform.GetChild(0).GetComponent<ArmRotation>().direction;
+            }
         }
         anim.SetBool("isMoving", isMoving);
         if (Input.GetButtonDown("Jump") && isGrounded == true)
@@ -56,7 +80,6 @@ public class Player_Movement : MonoBehaviour {
 
     void Jump()
     {
-        Debug.Log("Jumping");
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
         isGrounded = false;
         anim.SetBool("isGrounded", isGrounded);
