@@ -11,6 +11,7 @@ public class Player_Movement : MonoBehaviour {
     public bool isGrounded;
     public bool isMoving = false;
     public bool isCrouch = false;
+    public bool isCoverCrouch = false;
     private Animator anim;
     public bool MoveDir;
     public bool SaveDir;
@@ -26,7 +27,10 @@ public class Player_Movement : MonoBehaviour {
 	void Update () {
         playerMove();
 	}
-
+    public void SetCoverCrouch(bool isCrouch)
+    {
+        isCoverCrouch = isCrouch;
+    }
     void playerMove()
     {
         //Controls
@@ -42,6 +46,7 @@ public class Player_Movement : MonoBehaviour {
         if (moveX > 0.0f || moveX < 0.0f)
         {
             isMoving = true;
+            SetCoverCrouch(false);
             if (!MoveDir && AltCont)
             {
                 moveX = moveX * -1f;
@@ -61,10 +66,10 @@ public class Player_Movement : MonoBehaviour {
         anim.SetBool("isMoving", isMoving);
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
-    
+            SetCoverCrouch(false);
             Jump();
         }
-        if(Input.GetKey(KeyCode.S) && isGrounded == true)
+        if((Input.GetKey(KeyCode.S) && isGrounded == true) || (isCoverCrouch == true && isGrounded == true))
         {
             isCrouch = true;
             anim.SetBool("isCrouch", isCrouch);

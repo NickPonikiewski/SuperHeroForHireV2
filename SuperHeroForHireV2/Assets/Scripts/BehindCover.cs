@@ -6,6 +6,7 @@ public class BehindCover : MonoBehaviour {
 
     public Transform Player;
     public float MinPlayerDistance;
+    private bool cover = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,10 +18,10 @@ public class BehindCover : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.E) && PlayerDis <= MinPlayerDistance)
         {
+            cover = !cover;
             //move player to edge of surface stop movement (maybe just a sprite and hide real player)
-            Player.GetComponent<Player_Movement>().isCrouch = true;
+            Player.GetComponent<Player_Movement>().SetCoverCrouch(cover);
             Debug.Log("Player in cover");
-
         }
 	}
 }
