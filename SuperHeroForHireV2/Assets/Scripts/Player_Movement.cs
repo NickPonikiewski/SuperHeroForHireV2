@@ -72,7 +72,8 @@ public class Player_Movement : MonoBehaviour {
         if((Input.GetKey(KeyCode.S) && isGrounded == true) || (isCoverCrouch == true && isGrounded == true))
         {
             isCrouch = true;
-            anim.SetBool("isCrouch", isCrouch);
+            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(gameObject.GetComponent<BoxCollider2D>().size.x, (gameObject.GetComponent<BoxCollider2D>().size.y/2)); // fix
+            gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(gameObject.GetComponent<BoxCollider2D>().offset.x, -((gameObject.GetComponent<BoxCollider2D>().size.y / 2)/2)); //fix
         }
         else
         {
