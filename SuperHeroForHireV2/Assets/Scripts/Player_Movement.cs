@@ -12,12 +12,18 @@ public class Player_Movement : MonoBehaviour {
     public bool isMoving = false;
     public bool isCrouch = false;
     public bool isCoverCrouch = false;
+    public bool isCrouchToggle = false;
     private Animator anim;
     public bool MoveDir;
     public bool SaveDir;
     public bool AltCont = false;
-	// Use this for initialization
-	void Start () {
+    public Vector2 NormalBoxCollSize = new Vector2(0.2f, 0.39f);
+    public Vector2 NormalBocCollOffset = new Vector2(0, 0.03168509f);
+
+    public Vector2 CrouchBoxCollSize = new Vector2(0.2f, 0.2228197f);
+    public Vector2 CrouchBocCollOffset = new Vector2(0, -0.05190507f);
+    // Use this for initialization
+    void Start () {
         anim = GetComponent<Animator>();
         MoveDir = gameObject.transform.GetChild(0).GetComponent<ArmRotation>().direction;
         SaveDir = gameObject.transform.GetChild(0).GetComponent<ArmRotation>().direction;
@@ -69,15 +75,31 @@ public class Player_Movement : MonoBehaviour {
             SetCoverCrouch(false);
             Jump();
         }
-        if((Input.GetKey(KeyCode.S) && isGrounded == true) || (isCoverCrouch == true && isGrounded == true))
+        if(Input.GetKeyDown(KeyCode.S) && isGrounded == true && isCrouchToggle == true)
+        {
+            isCrouch = !isCrouch;
+            if(isCrouch)
+            {
+                gameObject.GetComponent<BoxCollider2D>().size = CrouchBoxCollSize;
+                gameObject.GetComponent<BoxCollider2D>().offset = CrouchBocCollOffset;
+            }
+            else
+            {
+                gameObject.GetComponent<BoxCollider2D>().size = NormalBoxCollSize;
+                gameObject.GetComponent<BoxCollider2D>().offset = NormalBocCollOffset;
+            }
+        }
+        if((Input.GetKey(KeyCode.S) && isGrounded == true && isCrouchToggle == false) || (isCoverCrouch == true && isGrounded == true))
         {
             isCrouch = true;
-            gameObject.GetComponent<BoxCollider2D>().size = new Vector2(gameObject.GetComponent<BoxCollider2D>().size.x, (gameObject.GetComponent<BoxCollider2D>().size.y/2)); // fix
-            gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(gameObject.GetComponent<BoxCollider2D>().offset.x, -((gameObject.GetComponent<BoxCollider2D>().size.y / 2)/2)); //fix
+            gameObject.GetComponent<BoxCollider2D>().size = CrouchBoxCollSize;
+            gameObject.GetComponent<BoxCollider2D>().offset = CrouchBocCollOffset;
         }
-        else
+        else if(isCrouchToggle == false)
         {
             isCrouch = false;
+            gameObject.GetComponent<BoxCollider2D>().size = NormalBoxCollSize;
+            gameObject.GetComponent<BoxCollider2D>().offset = NormalBocCollOffset;
         }
         anim.SetBool("isCrouch", isCrouch);
         //Animations

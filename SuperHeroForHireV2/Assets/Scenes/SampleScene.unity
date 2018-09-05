@@ -497,7 +497,12 @@ Prefab:
     - target: {fileID: 61594092929147308, guid: ce95a1f4f7e04cb45b97737ad3c6fddd,
         type: 2}
       propertyPath: m_Size.y
-      value: 0.39011067
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 114385258574981782, guid: ce95a1f4f7e04cb45b97737ad3c6fddd,
+        type: 2}
+      propertyPath: isCrouchToggle
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce95a1f4f7e04cb45b97737ad3c6fddd, type: 2}
