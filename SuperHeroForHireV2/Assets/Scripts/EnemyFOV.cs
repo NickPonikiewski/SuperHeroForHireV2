@@ -12,6 +12,7 @@ public class EnemyFOV : MonoBehaviour {
     public LayerMask obstacleMask;
 
     public List<Transform> visibleTargets = new List<Transform>();
+    public float meshResolution;
 
     IEnumerator FindTargetsWithDelay(float delay)
     {
@@ -42,6 +43,16 @@ public class EnemyFOV : MonoBehaviour {
                     visibleTargets.Add(target);
                 }
             }
+        }
+    }
+    void DrawFieldofView()
+    {
+        int stepCount = Mathf.RoundToInt( viewAngle * meshResolution);
+        float stepAngleSize = viewAngle / stepCount;
+
+        for(int i =0; i<= stepCount; i++)
+        {
+
         }
     }
     public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
