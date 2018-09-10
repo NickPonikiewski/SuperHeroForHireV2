@@ -40,9 +40,12 @@ public class DialogueMannager : MonoBehaviour
     {
         if(sentences.Count == 0)
         {
-            ContinueBtn.GetComponentInChildren<Text>().text = "Close";
             EndDialogue();
             return;
+        }
+        if(sentences.Count == 1)
+        {
+            ContinueBtn.GetComponentInChildren<Text>().text = "Close";
         }
 
         string sentence = sentences.Dequeue();
