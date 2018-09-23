@@ -53,7 +53,7 @@ public class EnemyAI : MonoBehaviour {
         {
             isAttacking = true;
             Attack(hit);
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveDir * EnemySprint, gameObject.GetComponent<Rigidbody2D>().velocity.y);
+            //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveDir * EnemySprint, gameObject.GetComponent<Rigidbody2D>().velocity.y); enemy sprint
 
         }
         else if(isAttacking == true)
@@ -62,7 +62,7 @@ public class EnemyAI : MonoBehaviour {
             Attack(hit);
             // stop moving and attack
             //set timer to resume chase
-            if (Mathf.Abs(dist) >= MaxDist - 3)
+            if (Mathf.Abs(dist) >= MaxDist + 1)// and a timer 
             {
                 Hold = false;
                 isAttacking = false;
@@ -127,7 +127,7 @@ public class EnemyAI : MonoBehaviour {
 
         float angle = Mathf.Atan2(AimAt.y, AimAt.x) * Mathf.Rad2Deg;
 
-        gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle)); // rotate gun, need to make this smooth.
 
         if (angle > 0f && angle < 80f || angle < 0f && angle > -80f)
         {
