@@ -16,6 +16,8 @@ public class EnemyAI : MonoBehaviour {
     private bool Hold = false;
     public int MaxDist = 20, MinDist = 5;
     private bool FirstAttack = true;
+    private bool LookingForCover = false;
+    private bool MoveToCover = false;
 
 
     public float _TimeToFire = 0f;
@@ -24,12 +26,17 @@ public class EnemyAI : MonoBehaviour {
     public float maxHealth = 100;
     public float CurrHealth = 100;
 
+    float disToClosestCover = Mathf.Infinity;
+    BehindCover closestCover = null;
+    BehindCover[] allCover;
+
 
 
     // Use this for initialization
     void Start ()
     {
         direction = true;
+        allCover = FindObjectsOfType<BehindCover>();
     }
 	
 	// Update is called once per frame
@@ -49,12 +56,17 @@ public class EnemyAI : MonoBehaviour {
         {
             MoveDir = 1;
         }
-        if ((angle < 15.0F) && (Mathf.Abs(dist) < MaxDist) && (Mathf.Abs(dist) > MinDist) && (Hold == false) && (Mathf.Floor(hit.distance) >= Mathf.Floor(dist))) // sees if player is in view angle and within distance and if enemy can see them
+        if ((angle < 35.0F) && (Mathf.Abs(dist) < MaxDist) && (Mathf.Abs(dist) > MinDist) && (Hold == false) && (Mathf.Floor(hit.distance) >= Mathf.Floor(dist)) && LookingForCover == false && isAttacking == false) // sees if player is in view angle and within distance and if enemy can see them
         {
-            isAttacking = true;
-            Attack(hit);
+            //isAttacking = true;
+            LookingForCover = true;
+            //Attack(hit);
             //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveDir * EnemySprint, gameObject.GetComponent<Rigidbody2D>().velocity.y); enemy sprint
 
+        }
+        else if (LookingForCover == true)
+        {
+            FindClosestCover();
         }
         else if(isAttacking == true)
         {
@@ -92,6 +104,48 @@ public class EnemyAI : MonoBehaviour {
 
     }
 
+    void FindClosestCover()
+    {
+
+        if (MoveToCover == false)
+        {
+            foreach (BehindCover currCover in allCover)
+            {
+                float disToCover = (currCover.transform.position - transform.position).sqrMagnitude;
+                if (disToCover < disToClosestCover)
+                {
+                    disToClosestCover = disToCover;
+                    closestCover = currCover;
+                }
+            }
+            MoveToCover = true;
+        }
+        //goto over
+        Vector2 CoverDir = target.position - transform.position;
+        int Movedir;
+        if (CoverDir.x < 0)
+        {
+            Movedir = -1;
+        }
+        else
+        {
+            Movedir = 1;
+        }
+
+        //check dis
+        float CoverDis = Vector2.Distance(closestCover.transform.position, transform.position);
+        if (CoverDis > 2)
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Movedir * EnemySprint, gameObject.GetComponent<Rigidbody2D>().velocity.y);
+        }
+        else
+        {
+            MoveToCover = false;
+            LookingForCover = false;
+            isAttacking = true;
+            Debug.Log("Enemy In Cover");
+        }
+    }
     void Movement()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(XMoveDirection, 0));
