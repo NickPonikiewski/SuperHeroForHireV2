@@ -19,7 +19,6 @@ public class EnemyAI : MonoBehaviour {
     private bool LookingForCover = false;
     private bool MoveToCover = false;
 
-
     public float _TimeToFire = 0f;
     public float _FireRate = 5f;
 
@@ -37,6 +36,7 @@ public class EnemyAI : MonoBehaviour {
     {
         direction = true;
         allCover = FindObjectsOfType<BehindCover>();
+        Physics2D.IgnoreCollision(target.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 	
 	// Update is called once per frame
@@ -58,10 +58,10 @@ public class EnemyAI : MonoBehaviour {
         }
         if ((angle < 35.0F) && (Mathf.Abs(dist) < MaxDist) && (Mathf.Abs(dist) > MinDist) && (Hold == false) && (Mathf.Floor(hit.distance) >= Mathf.Floor(dist)) && LookingForCover == false && isAttacking == false) // sees if player is in view angle and within distance and if enemy can see them
         {
-            //isAttacking = true;
+            isAttacking = true;
             LookingForCover = true;
-            //Attack(hit);
-            //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveDir * EnemySprint, gameObject.GetComponent<Rigidbody2D>().velocity.y); enemy sprint
+            Attack(hit);
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveDir * EnemySprint, gameObject.GetComponent<Rigidbody2D>().velocity.y); // enemy sprint
 
         }
         else if (LookingForCover == true)
@@ -94,7 +94,7 @@ public class EnemyAI : MonoBehaviour {
             if(Mathf.Abs(dist) <= MinDist)
             {
                 //back away
-                BackPed();
+               // BackPed();// Remove, make them like a unmoveable wall
             }
         }
         else
@@ -106,7 +106,6 @@ public class EnemyAI : MonoBehaviour {
 
     void FindClosestCover()
     {
-
         if (MoveToCover == false)
         {
             foreach (BehindCover currCover in allCover)
@@ -120,8 +119,9 @@ public class EnemyAI : MonoBehaviour {
             }
             MoveToCover = true;
         }
-        //goto over
+        //goto cover
         Vector2 CoverDir = target.position - transform.position;
+        //Vector2 targetDir = target.position - transform.position;
         int Movedir;
         if (CoverDir.x < 0)
         {
@@ -131,19 +131,30 @@ public class EnemyAI : MonoBehaviour {
         {
             Movedir = 1;
         }
-
-        //check dis
+        //check player isn't between enemy and cover
         float CoverDis = Vector2.Distance(closestCover.transform.position, transform.position);
-        if (CoverDis > 2)
+        float TargetDis = Vector2.Distance(target.position, transform.position);
+        if(CoverDis < TargetDis)
         {
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Movedir * EnemySprint, gameObject.GetComponent<Rigidbody2D>().velocity.y);
+            //check dis
+            //float CoverDis = Vector2.Distance(closestCover.transform.position, transform.position);
+            if (CoverDis > 2)
+            {
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Movedir * EnemySprint, gameObject.GetComponent<Rigidbody2D>().velocity.y);
+            }
+            else
+            {
+                MoveToCover = false;
+                LookingForCover = false;
+                isAttacking = true;
+                Debug.Log("Enemy In Cover");
+             }
         }
         else
         {
             MoveToCover = false;
             LookingForCover = false;
             isAttacking = true;
-            Debug.Log("Enemy In Cover");
         }
     }
     void Movement()
