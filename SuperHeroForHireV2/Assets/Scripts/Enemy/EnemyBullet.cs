@@ -4,7 +4,7 @@ public class EnemyBullet : MonoBehaviour {
 
     private Transform target;
 
-    public float speed = 70f;
+    private float speed = 30f;
 
     Vector3 OldDir;
 
@@ -60,9 +60,9 @@ public class EnemyBullet : MonoBehaviour {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject != null)
+        if (collision.gameObject != null && collision.gameObject.tag != "Enemy")
         {
-            if (collision.gameObject.name == "Player")
+            if (collision.gameObject.tag == "Player")
             {
                 if (target.gameObject != null)
                 {
@@ -74,7 +74,7 @@ public class EnemyBullet : MonoBehaviour {
                     }
                 }
             }
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject);
     }
 }

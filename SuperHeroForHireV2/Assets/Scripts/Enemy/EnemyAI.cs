@@ -28,14 +28,18 @@ public class EnemyAI : MonoBehaviour {
     float disToClosestCover = Mathf.Infinity;
     BehindCover closestCover = null;
     BehindCover[] allCover;
+    
+    EnemyAI[] allEnemies;
 
-
+    float disToClosestEnemy = Mathf.Infinity;
+    EnemyAI closestEnemy = null;
 
     // Use this for initialization
     void Start ()
     {
         direction = true;
         allCover = FindObjectsOfType<BehindCover>();
+        allEnemies = FindObjectsOfType<EnemyAI>();
         Physics2D.IgnoreCollision(target.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 	
@@ -47,6 +51,25 @@ public class EnemyAI : MonoBehaviour {
         float angle = Vector3.Angle(targetDir, forward);
         var dist = Vector3.Distance(target.position, transform.position);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDir); // see if player is in sight of enemy 
+        float EnemyDis = MinDist + 1;
+        if(isAttacking == true)
+        {
+            Attack(hit);
+            foreach (EnemyAI currEnemy in allEnemies)
+            {
+                float disToEnemy = (currEnemy.transform.position - transform.position).sqrMagnitude;
+                if (disToEnemy < disToClosestCover && currEnemy != this && currEnemy.transform.position.y == transform.position.y)
+                {
+                    disToClosestEnemy = disToEnemy;
+                    closestEnemy = currEnemy;
+                }
+            }
+            EnemyDis = Vector2.Distance(closestEnemy.transform.position, transform.position);
+        }
+        else
+        {
+            Movement();
+        }
 
         if (targetDir.x < 0)
         {
@@ -60,15 +83,14 @@ public class EnemyAI : MonoBehaviour {
         {
             isAttacking = true;
             LookingForCover = true;
-            Attack(hit);
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveDir * EnemySprint, gameObject.GetComponent<Rigidbody2D>().velocity.y); // enemy sprint
+            //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveDir * EnemySprint, gameObject.GetComponent<Rigidbody2D>().velocity.y); // enemy sprint
 
         }
         else if (LookingForCover == true)
         {
             FindClosestCover();
         }
-        else if(isAttacking == true)
+/*      else if(isAttacking == true)
         {
             Hold = true;
             Attack(hit);
@@ -91,16 +113,23 @@ public class EnemyAI : MonoBehaviour {
                   
                 }
             }
-            if(Mathf.Abs(dist) <= MinDist)
-            {
-                //back away
-               // BackPed();// Remove, make them like a unmoveable wall
-            }
-        }
-        else
+        } */
+
+        /*else if ((Mathf.Abs(dist) > MinDist))
         {
-            Movement();
-        }
+            if(isAttacking)
+            {
+                if((Mathf.Abs(EnemyDis) > MinDist))//maybe enemies don't run at player when they have guns?
+                {
+                    Movement();
+                }
+            }
+            else
+            {
+                Movement();
+            }
+            
+        }*/
 
     }
 
@@ -111,7 +140,7 @@ public class EnemyAI : MonoBehaviour {
             foreach (BehindCover currCover in allCover)
             {
                 float disToCover = (currCover.transform.position - transform.position).sqrMagnitude;
-                if (disToCover < disToClosestCover)
+                if (disToCover < disToClosestCover && closestCover.transform.position.y >= transform.position.y - 10 && closestCover.transform.position.y <= transform.position.y + 5)//range not working
                 {
                     disToClosestCover = disToCover;
                     closestCover = currCover;
@@ -226,10 +255,6 @@ public class EnemyAI : MonoBehaviour {
         }
         _TimeToFire -= Time.deltaTime;
     }
-    void BackPed()
-    {
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2( -1 * (XMoveDirection) * EnemySpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
-    }
     void Chase()
     {
         
@@ -277,4 +302,12 @@ public class EnemyAI : MonoBehaviour {
         localScale.x *= -1;
         transform.GetChild(0).transform.localScale = localScale;
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
+        {
+            Physics2D.IgnoreCollision( collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+    } 
 }

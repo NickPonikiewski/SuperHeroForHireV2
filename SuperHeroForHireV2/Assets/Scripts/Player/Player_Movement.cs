@@ -107,7 +107,6 @@ public class Player_Movement : MonoBehaviour {
        
         //physics
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
-
     }
 
     void Jump()
@@ -133,6 +132,4 @@ public class Player_Movement : MonoBehaviour {
             anim.SetBool("isGrounded", isGrounded);
         }
     }
-
-    
 }
