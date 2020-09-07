@@ -14,7 +14,8 @@ public class EnemyAI : MonoBehaviour {
     public bool direction;
     private bool isAttacking = false;
     private bool Hold = false;
-    public int MaxDist = 20, MinDist = 5;
+    private int MaxDist = 1000; 
+    public int MinDist = 5;
     private bool FirstAttack = true;
     private bool LookingForCover = false;
     private bool MoveToCover = false;
@@ -22,9 +23,11 @@ public class EnemyAI : MonoBehaviour {
     public float _TimeToFire = 0f;
     public float _FireRate = 5f;
 
+    public float _TimeToAim = 0f;
     public float maxHealth = 100;
     public float CurrHealth = 100;
 
+    public bool IsVisible = false;
     float disToClosestCover = Mathf.Infinity;
     BehindCover closestCover = null;
     BehindCover[] allCover;
@@ -50,25 +53,28 @@ public class EnemyAI : MonoBehaviour {
         Vector3 forward = XMoveDirection * transform.right;
         float angle = Vector3.Angle(targetDir, forward);
         var dist = Vector3.Distance(target.position, transform.position);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDir); // see if player is in sight of enemy 
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDir, Mathf.Infinity, ~ LayerMask.GetMask("Ignore Raycast")); // see if player is in sight of enemy 
         float EnemyDis = MinDist + 1;
         if(isAttacking == true)
         {
             Attack(hit);
             foreach (EnemyAI currEnemy in allEnemies)
             {
-                float disToEnemy = (currEnemy.transform.position - transform.position).sqrMagnitude;
-                if (disToEnemy < disToClosestCover && currEnemy != this && currEnemy.transform.position.y == transform.position.y)
+                if(currEnemy != null)
                 {
-                    disToClosestEnemy = disToEnemy;
-                    closestEnemy = currEnemy;
+                    float disToEnemy = (currEnemy.transform.position - transform.position).sqrMagnitude;
+                    if (disToEnemy < disToClosestCover && currEnemy != this /*&& currEnemy.transform.position.y == transform.position.y*/)
+                    {
+                        disToClosestEnemy = disToEnemy;
+                        closestEnemy = currEnemy;
+                    }
                 }
             }
             EnemyDis = Vector2.Distance(closestEnemy.transform.position, transform.position);
         }
         else
         {
-            Movement();
+            //Movement();
         }
 
         if (targetDir.x < 0)
@@ -79,7 +85,9 @@ public class EnemyAI : MonoBehaviour {
         {
             MoveDir = 1;
         }
-        if ((angle < 35.0F) && (Mathf.Abs(dist) < MaxDist) && (Mathf.Abs(dist) > MinDist) && (Hold == false) && (Mathf.Floor(hit.distance) >= Mathf.Floor(dist)) && LookingForCover == false && isAttacking == false) // sees if player is in view angle and within distance and if enemy can see them
+        //if ((angle < 35.0F) && (Mathf.Abs(dist) < MaxDist) && (Mathf.Abs(dist) > MinDist) && (Hold == false) && (Mathf.Floor(hit.distance) >= Mathf.Floor(dist)) && LookingForCover == false && isAttacking == false && IsVisible) // sees if player is in view angle and within distance and if enemy can see them
+       // {
+        if (/*(Mathf.Abs(dist) < MaxDist) && (Mathf.Abs(dist) > MinDist) &&*/ (Mathf.Floor(hit.distance) >= Mathf.Floor(dist)) && LookingForCover == false && isAttacking == false && IsVisible) // sees if player is in view angle and within distance and if enemy can see them
         {
             isAttacking = true;
             LookingForCover = true;
@@ -88,7 +96,7 @@ public class EnemyAI : MonoBehaviour {
         }
         else if (LookingForCover == true)
         {
-            FindClosestCover();
+            //FindClosestCover();
         }
 /*      else if(isAttacking == true)
         {
@@ -140,7 +148,7 @@ public class EnemyAI : MonoBehaviour {
             foreach (BehindCover currCover in allCover)
             {
                 float disToCover = (currCover.transform.position - transform.position).sqrMagnitude;
-                if (disToCover < disToClosestCover && closestCover.transform.position.y >= transform.position.y - 10 && closestCover.transform.position.y <= transform.position.y + 5)//range not working
+                if (disToCover < disToClosestCover /*&& closestCover.transform.position.y >= transform.position.y - 10 && closestCover.transform.position.y <= transform.position.y + 5*/)//range not working
                 {
                     disToClosestCover = disToCover;
                     closestCover = currCover;
@@ -220,9 +228,12 @@ public class EnemyAI : MonoBehaviour {
     
 
         float angle = Mathf.Atan2(AimAt.y, AimAt.x) * Mathf.Rad2Deg;
-
-        gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle)); // rotate gun, need to make this smooth.
-
+        if(_TimeToAim <= 0f)
+        {
+            gameObject.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle)); // rotate gun, need to make this smooth.
+            _TimeToAim = 1f / 2f/*RateofAim*/;
+        }
+        _TimeToAim -= Time.deltaTime;
         if (angle > 0f && angle < 80f || angle < 0f && angle > -80f)
         {
             if (direction == false)
@@ -249,7 +260,8 @@ public class EnemyAI : MonoBehaviour {
 
             if (bullet != null)
             {
-                bullet.Seek(target);
+                //bullet.Seek(target);
+                bullet.Seek(gameObject.transform.GetChild(0).transform.GetChild(2).transform, target);
             }
             _TimeToFire = 1f / _FireRate;
         }
@@ -305,9 +317,19 @@ public class EnemyAI : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
+        if(collision.gameObject.tag == "EnemyBullet")
+        {
+            Debug.Log("hit by enemy bullet");
+            Physics2D.IgnoreCollision( collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+        if(collision.gameObject.tag == "Enemy")
         {
             Physics2D.IgnoreCollision( collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
+    }
+
+    void OnBecameVisible()
+    {
+        IsVisible = true;
     } 
 }
